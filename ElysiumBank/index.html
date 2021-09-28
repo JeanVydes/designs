@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Elysium</title>
+</head>
+
+<body>
+    <div class="main-root">
+        <div class="canvas-wrapper">
+            <svg class="canvas" viewBox="0 0 1920 1080" preserveAspectRatio="xMaxYMid slice"></svg>
+        </div>
+        <div class="content">
+            <div class="menu-container">
+                <div class="menu-content">
+                    <div class="menu-brand">
+                        <div class="menu-brand-content">
+                            <h1 class="menu-brand-text">Elysium</h1>
+                        </div>
+                    </div>
+
+                    <nav class="menu-items">
+                        <ul class="menu-ul-items">
+                            <i class="menu-ul-item-element">
+                                <a href="#">
+                                    Features
+                                </a>
+                            </i>
+
+                            <i class="menu-ul-item-element">
+                                <a href="#">
+                                    Community
+                                </a>
+                            </i>
+
+                            <i class="menu-ul-item-element">
+                                <a href="#">
+                                    Support
+                                </a>
+                            </i>
+
+                            <i class="menu-ul-item-element">
+                                <a href="#">
+                                    About us
+                                </a>
+                            </i>
+                        </ul>
+                    </nav>
+
+                    <div class="menu-auth">
+                        <button class="open-an-account-button">Open An Account</button>
+                        <button class="auth-sign-in-button">Sign In</button>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <h1>Elysium</h1>
+                <p>A bank that you can use anywhere with totally privacy...</p>
+                <button>Open An Account!</button>
+            </div>
+            <div class="secondary-content">
+                <div class="seconday-content-inside">
+                    <div class="security">
+                        <div class="security-title-container">
+                            <h1 class="security-title">A financial service that provide you a lot of methods for securing your account!</h1>
+                        </div>
+                        <div class="security-components">
+                            <div class="security-component">
+                                <i class="fas fa-shield-check"></i>
+                                <div class="security-title-component">
+                                    <h3 class="security-title-cmp-i">2FA</h3>
+                                </div>
+                                <p>Sign in with private keys that just you own</p>
+                            </div>
+                            <div class="security-component">
+                                <i class="fas fa-clipboard-list"></i>
+                                <div class="security-title-component">
+                                    <h3 class="security-title-cmp-i">Review Every Transaction</h3>
+                                </div>
+                                <p>You can aprove or decline any transaction that will make to your account</p>
+                            </div>
+                            <div class="security-component">
+                                <i class="fas fa-database"></i>
+                                <div class="security-title-component">
+                                    <h3 class="security-title-cmp-i">Secured Data</h3>
+                                </div>
+                                <p>Your data is saved and encrypted in our servers that has strong security</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tertiary-content">
+                <div class="tertiary-content-inside">
+                    <div class="features">
+                        <div class="features-title-container">
+                            <h1 class="features-title">We provide to you a lot of features that can help you make your life easier</h1>
+                        </div>
+                        <div class="features-components">
+                            <div class="features-component">
+                                <i class="fab fa-paypal"></i>
+                                <div class="features-title-component">
+                                    <h3 class="features-title-cmp-i">PayPal Support</h3>
+                                </div>
+                                <p>Move your money between PayPal and <span class="highlight-text">Elysium</span></p>
+                            </div>
+                            <div class="features-component">
+                                <i class="fas fa-shopping-cart"></i>
+                                <div class="features-title-component">
+                                    <h3 class="features-title-cmp-i">Fast Pay</h3>
+                                </div>
+                                <p>Pay services as Netflix and Spotify faster with a few clicks</p>
+                            </div>
+                            <div class="features-component">
+                                <i class="fab fa-bitcoin"></i>
+                                <div class="features-title-component">
+                                    <h3 class="features-title-cmp-i">Cryptocurrency</h3>
+                                </div>
+                                <p>Convert your money into Bitcoins or Ethereums or the other way around</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { SVG } from "https://cdn.skypack.dev/@svgdotjs/svg.js";
+        import {
+            random,
+            map,
+            spline,
+            pointsInPath
+        } from "https://cdn.skypack.dev/@georgedoescode/generative-utils@1.0.0";
+        import tinycolor from "https://cdn.skypack.dev/tinycolor2@1.4.2";
+        import "https://cdn.skypack.dev/@svgdotjs/svg.filter.js";
+        import copy from "https://cdn.skypack.dev/copy-to-clipboard@3.3.1";
+        import { gsap } from "https://cdn.skypack.dev/gsap@3.6.0";
+
+        const svg = SVG(".canvas");
+        const { width, height } = svg.viewbox();
+
+        function wave(start, end, gradient) {
+            const numSteps = random(4, 8, true);
+            const step = 1 / numSteps;
+            const randomRange = random(32, 64);
+
+            const points = [];
+            let pointPosition = 0;
+
+            for (let i = 0; i <= numSteps; i++) {
+                const step = map(i, 0, numSteps, 0, 1);
+
+                let x = lerp(start.x, end.x, step);
+                let y = lerp(start.y, end.y, step);
+
+                if (i !== 0 && i !== numSteps) {
+                    x += random(-randomRange, randomRange);
+                    y += random(-randomRange, randomRange);
+                }
+
+                points.push({ x, y });
+            }
+
+            const pathData =
+                spline(points, 1, false) + `L ${end.x} ${height} L ${start.x} ${height} Z`;
+
+            const path = svg.path(pathData).attr("fill", gradient);
+        }
+
+        function lerp(v0, v1, t) {
+            return v0 * (1 - t) + v1 * t;
+        }
+
+        function generate() {
+            const numWaves = 7;
+            const base = tinycolor(`hsl(${random(0, 360)}, 65%, 55%)`);
+            const colors = base.analogous(6);
+
+            svg.rect(width, height).fill(random(colors).clone().darken(40).toString());
+
+            for (let i = 0; i < numWaves; i++) {
+                const randomOffset = random(-50, 50);
+                const originY = map(i, 0, numWaves, -height / 2, height / 3) + randomOffset;
+                const endY = map(i, 0, numWaves, 0, 1000) + randomOffset;
+
+                const color = random(colors).clone();
+
+                if (i < 3) {
+                    color.darken(50).desaturate(10);
+                }
+
+                const gradientOffset = map(i, 0, numWaves, 0.1, 1);
+
+                let gradient = svg.gradient("linear", function (add) {
+                    add.stop(0, color.clone().lighten(30).toHexString());
+                    add.stop(gradientOffset, color.clone().spin(60).toHexString());
+                });
+
+                gradient.from(0.5, 0).to(0, 1);
+
+                wave({ x: 0, y: originY }, { x: width, y: endY }, gradient);
+            }
+        }
+
+        generate();
+    </script>
+</body>
+
+</html>
