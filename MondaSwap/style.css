@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+
+*, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+.root {
+    width: 100%;
+}
+
+.content {
+    width: 100%; 
+}
+
+.menu {
+    width: 100%;
+}
+
+.menuContent {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    z-index: 999;
+}
+
+.menuItemList {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    vertical-align: middle;
+    z-index: 999;
+}
+
+.menu__Item {
+    list-style: none;
+    font-size: 18px;
+    color: #444554;
+    z-index: 999;
+}
+
+.menu__Item:hover {
+    color: #d6d6d6;
+    cursor: pointer;
+}
+
+.middleContent {
+    width: 100%;
+    height: 100%;
+}
+
+.backgrounds {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: absolute;
+}
+
+.background__One {
+    opacity: 0.25;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url(./background.jpg) 0% 0% / cover no-repeat;
+}
+
+.background__Two {
+    left: 0;
+    opacity: 0.25;
+    z-index: 1; 
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url(https://uniswap.org/images/glimmer_bg.svg) 0% 0% / cover no-repeat;
+}
+
+.centerText {
+    top: 0;
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.centerText__Content {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #E4DFDA;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.centerText__Content h1 {
+    font-size: 6rem;
+    letter-spacing: 15px;
+}
+
+.centerText__Content p {
+    font-size: 6rem;
+}
+
+.centerText button {
+    width: 20%;
+    text-align: left;
+    padding: 5px 15px;
+    border-radius: 1000px;
+    background: #382b4eb0;
+    color: #E4DFDA;
+    font-size: 22px;
+    animation: opacityDarken2 0.5s;
+}
+
+.centerText button:hover {
+   animation: opacityDarken 0.5s;
+   animation-fill-mode: forwards;
+}
+
+@keyframes opacityDarken {
+    0% {
+        width: 20%;
+        background-color: #382b4eb0;
+    }
+
+    100% {
+        width: 22%;
+        background-color: #382b4eb0;
+    }
+}
+
+@keyframes opacityDarken2 {
+    0% {
+        width: 21.5%;
+        background-color: #382b4eb0;
+    }
+
+    100% {
+        width: 20%;
+        background-color: #382b4eb0;
+    }
+}
+
+/* Menu Button */
+
+.menu__LaunchApp {
+    width: 100px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.menu__LaunchApp:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.menu__LaunchApp:active {
+    color: #000
+}
+
+.menu__LaunchApp:active:after {
+    background: transparent;
+}
+
+.menu__LaunchApp:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.menu__LaunchApp:hover:before {
+    animation: glowing 65s linear infinite;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.stats {
+    width: 100%;
+    margin-top: 100vh;
+    height: 30vh;
+}
+
+.stats__Content {
+    display: flex;
+    width: 70%;
+    height: 30vh;
+    margin-left: 15%;
+    margin-right: 15%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+.stats__Box {
+    text-align: center;
+    height: 30vh;
+    color: rgba(214, 214, 214, 0.507);
+}
+
+.stats__BoxNumber {
+    font-size: 4rem;
+}
+
+.stats__BoxTitle {
+    font-size: 1.2rem;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footer__Content {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#languageSelection {
+    background: #232224;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.445);
+    color: rgb(184, 184, 184);
+    padding: 5px 25px;
+    border-radius: 8px;
+    float: right;
+    margin-right: 10%;
+}
+
+#languageSelection:focus {
+    outline: none;
+}
